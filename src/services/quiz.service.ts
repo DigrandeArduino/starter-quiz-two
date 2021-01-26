@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class QuizService {
     * The list is retrieved from the mock.
     */
   private quizzes: Quiz[] = QUIZ_LIST;
+  private url = 'https://raw.githubusercontent.com/NablaT/starter-quiz-two/master/mock-quiz.json';
 
   /**
    * Observable which contains the list of the quiz.
@@ -25,6 +27,7 @@ export class QuizService {
   public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(QUIZ_LIST);
 
   constructor() {
+      http: HttpClient;
   }
 
   // tslint:disable-next-line:typedef
