@@ -8,8 +8,11 @@
       <span><li *ngIf="quiz.name==='Les Sports'"
         class="fas fa-running"></li>
       </span>
-      <span><li *ngIf="quiz.name==='Les Acteurs'"
-                class="fas fa-video"></li>
+      <span><div *ngIf="quiz.name==='Les Acteurs'"
+                class="fas fa-video"></div>
+      </span>
+      <span>
+        <div *ngIf="quiz.creationDate">Date : {{quiz.creationDate | date: 'fullDate'}}</div>
       </span>
     </h2>
     <button class="button-card" (click)="selectQuiz()">Select</button>
