@@ -35,4 +35,10 @@ export class QuizService {
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
   }
+
+  // tslint:disable-next-line:typedef
+  deleteQuiz(selected: Quiz) {
+    this.quizzes.splice(this.quizzes.indexOf(selected), 1);
+    this.quizzes$.next(this.quizzes);
+  }
 }

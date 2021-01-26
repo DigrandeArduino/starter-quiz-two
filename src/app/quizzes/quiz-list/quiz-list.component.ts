@@ -17,10 +17,17 @@ export class QuizListComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
   }
 
+  // tslint:disable-next-line:typedef
   quizSelected(selected: boolean) {
     console.log('event received from child:', selected);
+  }
+
+  // tslint:disable-next-line:typedef
+  deleteQuiz(selected: Quiz){
+    this.quizService.deleteQuiz(selected);
   }
 }
