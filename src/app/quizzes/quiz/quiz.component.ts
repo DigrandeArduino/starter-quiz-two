@@ -17,9 +17,11 @@ export class QuizComponent implements OnInit {
   constructor() {
   }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
   }
 
+  // tslint:disable-next-line:typedef
   selectQuiz() {
     this.quizSelected.emit(true);
   }
