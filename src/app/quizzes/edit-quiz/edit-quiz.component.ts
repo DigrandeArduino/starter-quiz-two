@@ -5,14 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './edit-quiz.component.html',
   styleUrls: ['./edit-quiz.component.scss']
 })
-export class EditQuizComponentComponent implements OnInit {
+export class EditQuizComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-}
-
-export class EditQuizComponent {
 }

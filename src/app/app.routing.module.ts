@@ -4,9 +4,9 @@ import {QuizListComponent} from './quizzes/quiz-list/quiz-list.component';
 import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/quiz-list', pathMatch: 'full'},
   {path: 'quiz-list', component: QuizListComponent},
-  {path: 'edit-quiz ', component: EditQuizComponent},
-  {path: '', redirectTo: 'quiz-list', pathMatch: 'full' }
+  {path: 'edit-quiz', component: EditQuizComponent}
 ];
 
 @NgModule({

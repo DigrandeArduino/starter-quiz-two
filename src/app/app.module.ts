@@ -8,8 +8,8 @@ import { QuizComponent } from './quizzes/quiz/quiz.component';
 import { HeaderComponent } from './header/header.component';
 import { QuizFormComponent } from './quizzes/quiz-form/quiz-form.component';
 import { HttpClientModule } from '@angular/common/http';
-import {EditQuizComponent, EditQuizComponentComponent} from './quizzes/edit-quiz/edit-quiz.component';
-import {AppRoutingModule} from './routing.module';
+import {EditQuizComponent} from './quizzes/edit-quiz/edit-quiz.component';
+import {AppRoutingModule} from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {AppRoutingModule} from './routing.module';
     QuizComponent,
     HeaderComponent,
     QuizFormComponent,
-    EditQuizComponentComponent,
+    EditQuizComponent,
     QuizListComponent
   ],
   imports: [

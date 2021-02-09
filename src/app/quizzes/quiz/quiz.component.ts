@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-quiz',
@@ -16,7 +17,7 @@ export class QuizComponent implements OnInit {
   @Output()
   quizDeleted: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   // tslint:disable-next-line:typedef
@@ -31,5 +32,9 @@ export class QuizComponent implements OnInit {
   // tslint:disable-next-line:typedef
   deleteQuiz() {
     this.quizDeleted.emit(this.quiz);
+  }
+
+  editQuiz(): void {
+    this.router.navigate(['edit-quiz']);
   }
 }
