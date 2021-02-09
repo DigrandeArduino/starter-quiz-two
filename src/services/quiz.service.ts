@@ -26,9 +26,7 @@ export class QuizService {
    */
   public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(QUIZ_LIST);
 
-  constructor() {
-      http: HttpClient;
-  }
+  constructor(private http: HttpClient) {this.getQuizzes()}
 
   // tslint:disable-next-line:typedef
   addQuiz(quiz: Quiz) {
@@ -37,6 +35,13 @@ export class QuizService {
     quiz.questions = [];
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
+  }
+
+  getQuizzes(): void{
+    this.http.get<Quiz[]>(this.url).subscribe((quiz) => {
+      this.quizzes = quiz;
+      this.quizzes$.next(this.quizzes);
+    }, (error) => console.log('Failed to load: ', error));
   }
 
   // tslint:disable-next-line:typedef
